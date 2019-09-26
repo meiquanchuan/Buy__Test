@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.administrator.buy__test"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
