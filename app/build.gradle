@@ -17,15 +17,12 @@ android {
     }
       buildTypes {
         debug {
-
             signingConfig signingConfigs.debug
-
         }
         release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             zipAlignEnabled true
-            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
