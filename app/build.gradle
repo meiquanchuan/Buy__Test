@@ -15,21 +15,21 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
- signingConfigs {
+   signingConfigs {
         debug {
-            File strFile = new File("../../Keystore/Debug/debug.jks")
+            File strFile = new File("../app/build/test.jks")
             storeFile file(strFile)
-            storePassword "storeDebug1234567890"
-            keyAlias "debugkey"
-            keyPassword "aliasDebug1234567890"
+            storePassword "android"
+            keyAlias "key0"
+            keyPassword "android"
             //println strFile.absolutePath;
         }
         release {
-            File strFile = new File("../../Keystore/Release/release.jks")
+            File strFile = new File("../app/build/test.jks")
             storeFile file(strFile)
-            storePassword "storeRelease1234567890"
-            keyPassword "keyRelease1234567890"
-            keyAlias "releasekey"
+            storePassword "android"
+            keyPassword "android"
+            keyAlias "key0"
             // println strFile.absolutePath;
         }
     }
