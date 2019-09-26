@@ -15,28 +15,17 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-   signingConfigs {
+      buildTypes {
         debug {
-            File strFile = new File("../app/build/test.jks")
-            storeFile file(strFile)
-            storePassword "android"
-            keyAlias "key0"
-            keyPassword "android"
-            //println strFile.absolutePath;
-        }
-        release {
-            File strFile = new File("../app/build/test.jks")
-            storeFile file(strFile)
-            storePassword "android"
-            keyPassword "android"
-            keyAlias "key0"
-            // println strFile.absolutePath;
-        }
-    }
 
-    buildTypes {
+            signingConfig signingConfigs.debug
+
+        }
         release {
-            signingConfig  signingConfigs.release
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
